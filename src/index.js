@@ -515,7 +515,8 @@ class CreditCardInput extends Component<Props, State> {
                 ...cardNumberInputProps,
                 onBlur: this.handleCardNumberBlur(),
                 onChange: this.handleCardNumberChange(),
-                onKeyPress: this.handleCardNumberKeyPress
+                onKeyPress: this.handleCardNumberKeyPress,
+                cardType: this.state.cardType
               }
             })}
           </InputWrapper>
