@@ -112,14 +112,16 @@ type Props = {
   inputStyle: Object,
   invalidClassName: string,
   invalidStyle: Object,
-  customTextLabels: Object
+  customTextLabels: Object,
+  cardType: string
 };
 type State = {
   cardImage: string,
   cardNumberLength: number,
   cardNumber: ?string,
   errorText: ?string,
-  showZip: boolean
+  showZip: boolean,
+  cardType: string
 };
 
 const inputRenderer = ({ props }: Object) => <input {...props} />;
@@ -213,7 +215,7 @@ class CreditCardInput extends Component<Props, State> {
       creditCardType.getTypeInfo(creditCardType.types[CARD_TYPES[cardType]]) ||
       {};
     const cardTypeLengths = cardTypeInfo.lengths || [16];
-
+    console.log('cardType', cardType)
     this.cardNumberField.value = formatCardNumber(cardNumber);
 
     this.setState({
